@@ -17,5 +17,12 @@ pipeline {
                 echo 'Deploy done'
             }
         }
+        
+    }
+    post{
+        always
+        {
+            emailext body: 'hi', subject: 'Pipeline status', to: 'devendrakadam.0403@gmail.com'
+        }
     }
 }
